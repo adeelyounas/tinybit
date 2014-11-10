@@ -27,6 +27,10 @@ class URLManager(models.Manager):
         all_words = list(self.filter(Q(url=None) | Q(url=""))
                          .values_list('word', flat=True))
 
+        if not all_words:
+            url_obj = TinyURL.objects.order_by('updated')[0]
+            return url_obj.word
+
         all_words.sort(key=len, reverse=True)
         cached_regex = '|'.join(all_words)
         regex = re.compile(cached_regex)
