@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>URL Trimmer</title>
+</head>
+<body>
+{% if tiny_url %}
+<p>Tiny URL for {{url}} is <a href="{{tiny_url}}">{{tiny_url}}</a></p>
+{% endif %}
+<form action='/url/trimmer/' method='post'>{% csrf_token %}
+{{ form.as_p }}
+<input type='submit' value='Submit' />
+</form>
+</body>
+</html>
