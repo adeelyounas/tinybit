@@ -5,8 +5,7 @@ from .models import TinyURL
 
 class URLForm(forms.Form):
     url = forms.CharField()
-    word = forms.CharField(widget=forms.HiddenInput(),
-                            initial="nothing")
+    word = forms.CharField(widget=forms.HiddenInput(), initial="nothing")
 
     def clean_word(self):
         return TinyURL.objects.suggest_url(self.cleaned_data["url"])
