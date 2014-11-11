@@ -15,3 +15,7 @@ Accessing Application
 Further Improvements
 --------------------
 * Use cache when creating short url (store list of available names and build regex based on that instead of query DB on every request)
+
+Know Issues
+-----------
+* Can encounter raise conditions, when request is made same time for same url 
