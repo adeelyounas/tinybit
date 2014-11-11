@@ -18,4 +18,4 @@ Further Improvements
 
 Know Issues
 -----------
-* Can encounter raise conditions, when request is made same time for same url 
+* Simultaneous request for same url can produce raise conditions.
